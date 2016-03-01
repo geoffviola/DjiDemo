@@ -1,0 +1,618 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.ecolumbia.djidemo.BasicFlightFragment"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btnTakeoff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take Off" />
+
+        <TextView
+            android:id="@+id/tvTakeOffResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Takeoff Result: "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Land" />
+
+        <TextView
+            android:id="@+id/tvLandingResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Landing Result: "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home" />
+
+        <TextView
+            android:id="@+id/tvHomeResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Going Home Result: "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMotorsOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motors On" />
+
+        <TextView
+            android:id="@+id/tvMotorsOnResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Motors On Result"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMotorsOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motors Off"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/tvMotorsOffResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Motors off result"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEnableVirtualStick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable Virtual Stick" />
+
+        <TextView
+            android:id="@+id/tvVirtualStickStatus_Enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="enable virtual stick status goes here"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnDisableVirtualStick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disable Virtual Stick" />
+
+        <TextView
+            android:id="@+id/tvVirtualStickStatus_Disable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disable virtual stick status goes here"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnToggleThrottle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Throttle Mode" />
+
+        <TextView
+            android:id="@+id/tvToggleThrottle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Throttle mode goes here"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Throttle Altitude"
+            android:id="@+id/textView2"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sbThrottleUp_Altitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="400"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tvThrottleUpAltitudeValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tvMeter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="5"
+            android:text="m"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Throttle Velocity"
+            android:id="@+id/textView3"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sbThrottleUp_Velocity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="800"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tvThrottleUpVelocityValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tvMeterPerSecond"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="m/s"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart"
+            android:layout_marginLeft="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnRollPitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Pitch &amp; Roll Mode" />
+
+        <TextView
+            android:id="@+id/tvRollPitchMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Roll/Pitch mode goes here"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Pitch"
+        android:id="@+id/textView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Pitch Angle"
+            android:id="@+id/textView4"
+            android:layout_weight="15"
+            android:singleLine="false" />
+
+        <SeekBar
+            android:id="@+id/sb_Pitch_Angle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="600"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tv_Pitch_Angle_Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tvPitch_Angle_Symbol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="5"
+            android:text="\u00B0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Pitch Velocity"
+            android:id="@+id/textView5"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sb_Pitch_Velocity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="300"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tv_Pitch_Velocity_Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tv_Pitch_Velocity_Symbol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="m/s"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart"
+            android:layout_marginLeft="2dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Roll" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Roll Angle"
+            android:id="@+id/textView6"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sb_Roll_Angle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="600"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tv_Roll_Angle_Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tv_Roll_Angle_Symbol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="5"
+            android:text="\u00B0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Roll Velocity"
+            android:id="@+id/textView7"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sb_Roll_Velocity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="300"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tv_Roll_Velocity_Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tv_Roll_Velocity_Symbol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="m/s"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart"
+            android:layout_marginLeft="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnYaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Yaw Mode" />
+
+        <TextView
+            android:id="@+id/tvYawMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yaw mode goes here"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Yaw Angle"
+            android:id="@+id/textView8"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sb_Yaw_Angle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="360"
+            android:progress="1" />
+
+        <TextView
+            android:id="@+id/tv_Yaw_Angle_Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tv_Yaw_Angle_Symbol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="5"
+            android:text="\u00B0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Yaw Velocity"
+            android:id="@+id/textView9"
+            android:layout_weight="15" />
+
+        <SeekBar
+            android:id="@+id/sb_Yaw_AngularVelocity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="73"
+            android:max="200" />
+
+        <TextView
+            android:id="@+id/tv_Yaw_AngularVelocity_Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/tv_Yaw_AngularVelocity_Symbol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="\u00B0+:+/s"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="textStart"
+            android:layout_marginLeft="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Orientation Mode: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/btnSetOrientationMode_CourseLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Lock" />
+
+        <Button
+            android:id="@+id/btnSetOrientationMode_Home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/btnSetOrientationMode_DefaultAircraftHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default Aircraft Heading" />
+
+        <TextView
+            android:id="@+id/tvSet_OrientationMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="set Orientation Mode goes here"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:id="@+id/btnRunVirtualStick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Run Virtual Stick" />
+
+        <TextView
+            android:id="@+id/tvRunThrottle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Results from run virtual stick"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+</LinearLayout>
